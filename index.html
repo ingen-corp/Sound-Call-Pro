@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Titulo  -->
+  <header>
+  <div class="logo-container">
+    <img src="imagens/Sound Call Pro Logo 01.jpg" 
+         alt="Logo Grounders" 
+         class="logo-img" />
+    <h1>Sound Call Pro</h1>
+  </div>
+
+  <div class="header-right">
+    <div class="developer-info">
+      Desenvolvedor:<br><strong>Angelo Ehrenfried</strong>
+    </div>
+    <div class="user-info" id="user-info">
+      <span id="user-label" style="display:none;"></span>
+      <button id="logout-btn" style="display:none;">Sair</button>
+    </div>
+  </div>
+</header>
+
+  <!-- Tela de Login -->
+  <section id="login-screen" class="screen active">
+    <div class="login-box">
+      <p>Para entrar, forneça sua senha de usuário</p>
+      <input type="password" id="password" placeholder="Digite aqui" />
+      <button id="login-btn">ENTRAR</button>
+    </div>
+  </section>
+
+
+<!-- Tela Principal -->
+<section id="main-screen" class="screen">
+  <div class="primary-box">
+    <h2>Texto Com Campainha
+      <button id="play-btn">▶</button>
+      <button id="pause-btn">⏸</button>
+    </h2>
+    <textarea id="message" placeholder="Digite aqui o texto que será lido com campainha..."></textarea>
+</div>
+
+  <!-- Painel direito (campainha + segunda caixa) -->
+  <div class="right-panel">
+    <button id="bell-btn">Reproduzir Som de Campainha ▶</button>
+
+    <!-- Segunda caixa de texto -->
+    <div class="secondary-box">
+      <h2>Texto Sem Campainha 
+        <button id="play2-btn">▶</button>
+        <button id="pause2-btn">⏸</button>
+      </h2>
+      <textarea id="message2" placeholder="Digite aqui o texto que será lido sem campainha..."></textarea>
+    </div>
+  </div>
+</section>
+
+<audio id="bell-sound" src="dingdong.mp3" preload="auto"></audio>
+<script src="script.js"></script>
+  </section>
+  <!-- logo no canto inferior direito -->
+  <img src="imagens/Sound Call Pro Logo 02.jpg" alt="Logo Sound Call Pro" class="logo-canto">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #bcbcbc, #e0e0e0);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* HEADER */
+/* ===== HEADER ORGANIZADO ===== */
+header {
+  background: linear-gradient(to right, #000000, #3533cd);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 40px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.logo-img { 
+  height: 170px; 
+  width: auto; 
+  object-fit: contain; 
+  margin-top: 30px; 
+}
+
+h1 {
+  font-size: 50px;
+  font-style: italic;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* distância entre “Desenvolvedor” e “Logado como” */
+  text-align: right;
+}
+
+.developer-info {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#user-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#logout-btn {
+  background: white;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+#logout-btn:hover {
+  background: #e0e0e0;
+}
+
+/* SCREENS */
+.screen {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.screen.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+/* LOGIN SCREEN */
+#login-screen {
+  background: linear-gradient(to bottom right, #dcdcdc, #f3f3f3);
+}
+
+.login-box {
+  text-align: center;
+  background: white;
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-box p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.login-box input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.login-box button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #0033cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #002299;
+}
+
+/* MAIN SCREEN */
+#main-screen {
+  background: linear-gradient(to right, #bcbcbc, #e0e0e0);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 50px;
+}
+
+/* --- Caixa principal (envolve o texto e botões da esquerda) --- */
+.primary-box {
+  background: white;
+  border: 3px solid #0000cc;
+  border-radius: 15px;
+  padding: 40px;
+  width: 600px;
+  height: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.primary-box h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.primary-box textarea {
+  width: 100%;
+  height: 450px;
+  border: 3px solid #0000cc;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 18px;
+  resize: none;
+}
+
+.primary-box textarea::placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+.primary-box button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: white;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+
+
+.right-panel {
+  display: flex;
+  flex-direction: column; /* botão em cima, caixa embaixo */
+  align-items: center;  /* alinhados à direita */
+  gap: 50px;
+  margin-right: 150px;
+}
+
+#bell-btn {
+  background: white;
+  border:3px solid #0000cc;
+  border-radius: 25px;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+
+}
+
+#bell-btn:hover {
+  background: #e6e6e6;
+}
+
+/* --- Segunda caixa de texto (sem campainha) --- */
+.secondary-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinha no centro */
+  gap: 25px;
+  margin-top: 50px; /* Opcional: abaixa um pouco o bloco */
+}
+
+#bell-btn {
+  align-self: flex-end; /* Garante que o botão fique à direita */
+}
+
+.secondary-box {
+  margin-top: 20px; /* Fica logo abaixo do botão */
+  align-self: center;
+}
+
+/* Mantém o estilo coeso com o painel da esquerda */
+.secondary-box {
+  background: white;
+  border: 3px solid #0000cc;       /* mesmo padrão da esquerda */
+  border-radius: 15px;
+  padding: 40px;
+  padding-top: 15px;
+  width: auto;
+  height: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  margin-top: 30px;
+  margin-right: -70px;
+}
+
+/* Título e botões de play/pause */
+.secondary-box h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* deixa os botões à direita */
+  gap: 15px;
+}
+
+/* Caixa de texto */
+.secondary-box textarea {
+  width: 500px;
+  height: 450px;
+  border: 3px solid #0000cc;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 18px;
+  resize: none;
+  margin-top: -20px;
+}
+
+.secondary-box textarea::placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+/* Botões redondos */
+.secondary-box button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: white;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.secondary-box button:hover {
+  background: #e6e6e6;
+  transform: scale(1.1);
+}
+
+
+
+.logo-canto {
+  position: fixed;       /* fixa na tela, mesmo rolando */
+  bottom: 0px;          /* 10px da borda inferior */
+  right: 0px;           /* 10px da borda direita */
+  width: 300px;          /* tamanho da logo */
+  transition: transform 0.3s ease;
+}
+
+.logo-canto:hover {
+  transform: scale(1.05); /* pequeno zoom ao passar o mouse */
+  opacity: 1;
+}
+
+/* FOOTER */
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 150px;
+  height: 80px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
